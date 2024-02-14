@@ -1,0 +1,27 @@
+Entity Framework core
+
+Entity Framework is an object relational mapper (orm)
+
+1) Database First Approach
+2  Code First Approach
+3  Model First Approach
+
+Install EntityFrame through nuget package
+1) Entity Framework Core
+   Entity Framework Core.Design
+   Entity Framework Core.SqlServer
+   Entity Framework Core.Tools
+
+PM Console Command:
+Scaffold-DbContext "Server=CHIRAGDELL\SQLEXPRESS;Database=test_db;Trusted_Connection=True;TrustServerCertificate=True;"Microsoft.EntityFrameworkCore.SqlServer -OutputDir Repos/Models -context LeanrnContextb -f -contextDir Repos -DataAnnotations
+
+In the appsetting.json file add a connection string object in a json format
+"ConnectionStrings": {
+  "apiconn": "Server=CHIRAGDELL\\SQLEXPRESS;Database=test_db;Trusted_Connection=True;TrustServerCertificate=True;"
+}
+
+the above connection string should be registered in the programme.cs file as middleware.
+
+builder.Services.AddDbContext<LeanrnContextb>(option =>
+option.UseSqlServer(builder.Configuration.GetConnectionString("apiconn")));
+

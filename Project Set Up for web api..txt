@@ -1,0 +1,18 @@
+Project Set Up for web api.
+
+Create a folder service which holder interface  i.e. ICustomerService
+	container class which consume interface   CustomerService.cs
+& inherit that interface in the class.
+
+In the Controller  Add Controller--CustomerController &Inject dependancies in the consctructor
+
+private readonly ICustomerService _service;
+public CustomerController(CustomerService service)
+{
+    this._service = service;
+}
+
+
+
+
+
