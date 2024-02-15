@@ -1,0 +1,85 @@
+Error TS6138: Property 'service' is declared but its value is never read.ts(6138)
+
+Solution:  Import service from respective service path in the error components.
+
+Angular Errors :  Router outlet is not a known element.
+
+Solution:  Add router module in the import array of respective module.
+.ie. App module, custom(ie.user) module
+
+Error: TS7006 : Parameter 'id' implicitly has 'any' type.
+viewuser(id) --> red line under id....
+
+Solution:Pass the proper data type to the respective control..if not known, then only pass any as data type but good solution to pass proper data type.
+
+viewuser(id : any)
+
+Error: TS2339 :  Property 'somename' does not exist on type
+{{somename.somename}}
+
+Solution : Check that object it has that property...
+
+Error: NG8002  can't bind to 'dataSource' since it isn't a known property of table.
+<table mat-table [dataSource]= "listUsers" class="mat-elevation-z8"/>
+Solution:  Import proper module in the import array of respective module..
+i.e [matTableModule]
+
+Error: NG8001 'list-users' is not a known element
+<list-users></list-users>
+
+Solution:  Go to respective module and exports in that module.ts file under export array..
+
+Also go to particular component .ts file and see the selector name..
+selector: 'app-list-users'
+
+user.module.ts  -->  exports:[ListUserComponent]
+
+Error: TS2564  Property 'username' has not initializer and is not definitely assigned in the constructor..
+username : boolean;  username has red mark...
+addUserForm: FormGroup;
+
+Solution: usename : boolean = false  
+addUserForm : FormGroup = new FormGroup({})
+Initialize at the time of declaration of property... 
+
+Error: TS2339:  Property 'users' doesn't exist on type 'AddUserComponent'
+{{users}} --> red line under users...
+
+Solution:  This means that you are trying to bind some data but its not there that's why it is not coming and throwing error.
+So check your component for that data.....
+{{users?.length}}
+
+
+
+Error:   ExpressionChangedAfter it has been Checked Error.
+Details:  Expression has changed after it was checked.. Previous value: 'false' Current Value: 'true'
+
+userActive : boolean = false;
+
+Solution:  Change the value in the ngAfterViewInit(){} Life cycle method.
+Inject--> private changeDetectorRef : ChangeDetectorRef in the constructor
+Implement --> AfterViewInit life cycle method.
+constructor(private changeDetectorRef: ChangeDetectorRef){
+}
+Call the detectChanges() method in the ngAfterViewInit Life cycle method.
+ngAfterViewInit(){
+  this.userActive = true;
+  this.changeDetectorRef.detectChanges()
+}
+
+Error : Can not match any routes...'create' in the developer console....
+
+Solution: Check app-routing.module.ts file...
+route will be defined proper way...
+In the app modules code is defined like this...
+{path:'users',children:[
+{path: 'create', component:AddUserComponent}
+]}
+
+Error : In the component.ts file it should be...
+constructor(private router:Router){
+}
+ngOnInit(){
+// this.router.navigate(['create'])
+this.router.navigate(['users','create'])
+}

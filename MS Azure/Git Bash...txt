@@ -1,0 +1,32 @@
+Git Bash..
+
+Command to see folder.
+ls
+
+Make empty folder to git repo
+git init
+
+Check github version..
+git --version
+
+create a new file in the folder with git bash..
+touch navin.txt
+
+write some content in navin.txt  VI is a editor to type in text file
+
+vi navin.txt
+
+i Iam navin here  (press I to start typing here)
+press esq : wq  (to save and exit)
+
+To see content of file.
+
+cat navin.txt
+
+
+
+
+
+
+
+
