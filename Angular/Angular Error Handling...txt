@@ -1,0 +1,43 @@
+Angular Error Handling..
+https://angular.io/guide/http-handle-request-errors
+
+private handleError(error: HttpErrorResponse) {
+  if (error.status === 0) {
+    // A client-side or network error occurred. Handle it accordingly.
+    console.error('An error occurred:', error.error);
+  } else {
+    // The backend returned an unsuccessful response code.
+    // The response body may contain clues as to what went wrong.
+    console.error(
+      `Backend returned code ${error.status}, body was: `, error.error);
+  }
+  // Return an observable with a user-facing error message.
+  return throwError(() => new Error('Something bad happened; please try again later.'));
+}
+---------------------------------------------------------------------------
+//  Service Side Coding...added pipe operator and catchError method...
+LoadAllEmployee() : Observable<object>{
+  return this.http.get(this.apiurl).pipe(
+    catchError(this.handleError)
+)}
+
+//  Component side coding...emplisting.component.ts
+1) Declare & Initialise variable with empty string to hold error message.
+   let errormessage:any = ''
+2) Add another call back after subcribe() call to the observable.
+   LoadAll(){
+	this.service.LoadAllEmployee().subscribe(result =>{
+	this.employeedata$ = result  //assigning value to observable type
+}), (error) => {
+	this.errormessage = error  // assigning error message to variable.
+
+}}
+
+//  View (Html) File Coding...
+
+Add another div to display error message on the div part..
+<div class="row">
+   <h5 class="text-danger">{{errormessage}} </h5> //added string             						interpolation to display.
+</div>
+
+

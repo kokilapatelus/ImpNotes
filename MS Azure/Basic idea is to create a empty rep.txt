@@ -1,0 +1,31 @@
+Basic idea is to create a empty repository and Link a local folder which will be sync with azure repo..  First we will clone azure blank repo and sync with local folder of our computer.
+
+Once it is sync, then we have to copy all our target project file in to that local folder and then push our code to git flow copy-staging-commit-push which will result in to our code will be available on azure repository with folder structure.
+
+Build Pipeline  (paralism request must be approved)
+aka.ms/azurepipeline
+Copy files  -->Target Location
+Publish Build Artifact.
+
+Project Setting --Service Connection --New--Resource mgr--manual
+
+portal--> subscription
+
+App Registration-->new-->
+
+In Azure create a new empty repository..
+
+Create a blank folder in our local c Drive preferable C:\Projects
+
+Open Git Gui and select 
+
+-----------------------------------------------
+Service Connection
+
+IAM Roles and Project
+
+PipeLine --New Pipeline
+
+Release Pipe Line
+Agent Job --> Select Artifact -->Stage1
+

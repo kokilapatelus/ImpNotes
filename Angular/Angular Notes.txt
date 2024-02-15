@@ -1,0 +1,18 @@
+
+Using CLI you can not create a specific angular version.
+
+But you can install a specific version of angular CLI into a particular folder.
+
+For Example:
+
+First create new folder inside any drive. I'm going to create a demo folder in D drive. Ex: d:\projects\demo.
+
+Then find this folder inside Command Prompt(cmd) or just type cmd into your created folder address bar in Windows and hit enter.
+
+Now type angular specific version command: npm install @angular/cli@1.7.x for angular 5. and use a similar command for the other version.
+
+After completing the installation, just create a new angular project in your specific folder that you recently installed angular. Ex: d:\projects\demo\.
+
+Now create an angular project using the command npx ng new Project_name and it will create a your specific angular version Project.
+
+In my example, it will create an angular 5 project.
