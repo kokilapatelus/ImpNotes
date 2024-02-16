@@ -1,0 +1,23 @@
+1800 865 9408  Azure Support No
+
+Steps to Deploy Project in to Azure with Dev Ops
+
+1) Create a App service in Azure Portal
+
+2) Create a new Repository in the Azure devops
+	Select Repo-->File-->Header Dropdown--> New Repo
+3) Create a Local Folder in to your Local Drive namely Azure in C:,D: anyone. and under it create a sub folder project
+ 
+   To open Git UI--Right Click and select more option which will display                                          Git UI if Git SCM downloaded and installed in our computer.
+4) Open Git UI for selecting source, Go to Azure Repo which we have created
+   now use Clone Option and click copy icon next to url which will copy the               path of the repository & Paste it in Source Path of GIT UI application.
+
+5) For Selecting Target in Git UI, go to local project folder which we have created and copy its path & paste into Target Directory in GIT UI.  Make sure to change the slash from back slash to forward slash in the Target path.
+
+6) Sometime, it ask for password while cloning repo in azure dev ops so copy that password and paste it when asked for authentication around 3 times then git ui open blank page with unstage and staging area.
+
+7) Go to Local Project folder and check the local repo which was created at this stage.  Now, copy the project folders and files given by the developer and paste it into our local git repo folder.
+
+8) In GIT UI  -->Rescan-->Staged-->Commit --> Push.
+
+
