@@ -1,0 +1,68 @@
+How to create a Service Connection in Azure Dev Ops
+
+Azure Dev Ops  --> Project Setting (bottom left hand side) -->Service Connection (Bottom 4th or 5 left of Left Side Bar)-->New Service Connection-->Create New button
+
+Now select Azure Resource Manager -->Service Principal (manual)
+
+Now we need subscription Id for that go to portal.azure.com
+
+and you will see subscription option on home page screen.
+
+create a subscription if not created, it will generate subscription id and subscription name which will be required to create a service connection.  paste the subscription id and subscription name in the respective input field of service connection creation screen of devops portal.
+
+Now it requires Service Principal Id, which we can search in Azure Portal with App Registration Option...
+
+Click App Registration-->new app registration-->Select name and done.
+
+Here Applicationid = Service Principal Id 
+     DirectoryId = Tenent Id
+copy and paste in service connection.
+
+
+For Key Id go to Certificate & Secret in azure portal and generate Certificate.  
+App Registration-->LeftSide Bar (Certificate & Secret)
+certificate-->New client secret-->give some name--> Add
+
+It will generate certificate for service connection.
+    value = Service Principal Key
+
+If we click on validate button it will be failed so we have to use 
+IAM service for  that
+
+Portal-->Subscription-->click on subscription-->IAM -->Add Role Assignment
+
+Add Role Assignment-->Members(Tab)-->Select members
+
+Search box give the app service name...select the checkbox..
+Here, Members should be app name registered under App Registration Not a person name.
+
+For Role select as a contributors.
+
+Reactivation in progress
+
+--------------------------------------------------
+Service Connection
+Portal-->Project Setting-->Service Connection --> New Service Connection
+
+Certificate
+Portal->App Registration --> Certificate & Secret-->New Client Certificate-->Give Name-->Add
+
+Subscription:
+Portal-->Subscription-->+Add
+
+
+Adding Role & Assignments (IAM)
+Portal--> Subscription -->Go Inside Subscription -->Access Control IAM -->Add Role Assignment
+
+
+Add Role Assignment Creation
+IAM -->Role-->Privileged Administrator Roles -->Contributor -->Next
+IAM -->Members-->+Select members--> (Select Names from App Registration Display Name)-->Select
+
+Add Role Assignment Creation
+Every Data fill up now Review & Assign.
+
+
+
+
+
