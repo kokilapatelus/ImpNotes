@@ -1,0 +1,16 @@
+Working with Azure Repo Creation & Cloning in to Local Folder
+
+Basic idea is to create a empty repository in Azure Portal and Link it to local folder which will be sync with azure repo..  First we will clone azure blank repo and sync with local folder of our computer.
+
+Once it is sync, then we have to copy all our target project file in to that local folder and then push our code to git flow copy-staging-commit-push which will result in to our code will be available on azure repository with folder structure.
+
+In Azure Dev Ops create a new empty repository..
+
+
+Then Create a Local Folder in personal computer...
+
+
+Open Git UI & Clone it from Azure DevOps Portal
+	Source would be clonned Azure dev ops Repo Path
+	Target would be Local Folder path with forward slash instead of back slash.
+
