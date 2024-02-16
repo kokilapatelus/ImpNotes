@@ -1,0 +1,45 @@
+How to work with session in .net core 3.1
+
+Startup.cs
+public void ConfigureService(IServiceCollection services)
+{
+   ...
+   services.AddSession(option => option.IdleTimeout = TimeSpan.FromSeconds(3600));
+
+}
+
+app.UseSession()
+
+In a Model create a UserInfo class
+
+public class UserInfo
+{
+   public int UserId {get; set;}
+   public string UserName {get; set;}
+}
+
+
+In a Home Controller Set the session value...
+
+public IActionResult Index()
+{
+  var userInfo = new UserInfo()
+{
+   UserId = 1,
+   UserName = "Mr Swamy"
+}
+// Set userinfo in to session
+  HttpContext.Session.SetString("SessionUser",JsonConvert.
+  SerializeObject(userInfo));
+}
+Here JsonConvert.SerializeObject(userInfo) is a value
+SessionUser is a key.
+
+In a UserController Get a session value.
+
+using Microsoft.AspNetCore.Http (For Get String Method)
+public IActionResult Index()
+{
+ var userInfo = HttpContext.Session.GetString("SessionUser")
+}
+"SessionUser" is a key to get value.

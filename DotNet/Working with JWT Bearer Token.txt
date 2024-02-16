@@ -1,0 +1,25 @@
+To start install below package throught nuget.
+Microsoft.AspNetCore.Authentication.JwtBearer
+
+In Programmer.cs file add below middle ware
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+
+Register service here..
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
+builder.Services.AddAuthorization();
+
+
+Register Middleware here.
+app.UseAuthentication();
+app.UseAuthorization();
+
+/FROM THIS:
+app.MapGet("/", [Authorize] () => {
+    return "Hello World!";
+});
+
+//TO THIS:
+app.MapGet("/", () => {
+  return "Hello World!";
+}).RequireAuthorization();
