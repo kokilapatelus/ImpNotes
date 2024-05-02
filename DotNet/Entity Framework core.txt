@@ -22,6 +22,7 @@ In the appsetting.json file add a connection string object in a json format
 
 the above connection string should be registered in the programme.cs file as middleware.
 
+Code For Adding Middleware pipeline for SQL Server database.
 builder.Services.AddDbContext<LeanrnContextb>(option =>
 option.UseSqlServer(builder.Configuration.GetConnectionString("apiconn")));
 
