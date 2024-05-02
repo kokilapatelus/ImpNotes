@@ -20,6 +20,20 @@ In the appsetting.json file add a connection string object in a json format
   "apiconn": "Server=CHIRAGDELL\\SQLEXPRESS;Database=test_db;Trusted_Connection=True;TrustServerCertificate=True;"
 }
 
+//Code for Adding DBContext Class with Code First Approach.
+
+ public class ApplicationDbContext : DbContext
+ {
+     public ApplicationDbContext(DbContextOptions options) : base(options)
+     {
+
+     }
+     //  Adding Table Name for Model
+     public DbSet<ExpenseEntity> Expenses { get; set; }
+
+
+ }
+
 the above connection string should be registered in the programme.cs file as middleware.
 
 Code For Adding Middleware pipeline for SQL Server database.
