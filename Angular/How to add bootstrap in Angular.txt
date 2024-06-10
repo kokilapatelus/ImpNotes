@@ -2,4 +2,17 @@ Install Bootstrap using npm command.
 
 npm i bootstrap@5.3.3 --save
 
-@
+Add bootstrap file in Angular.json file
+
+"styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+
+restrat application by ng serve command. and go to local host port 4200
+localhost:/4200
+
+Inspect-->Source-->style.css
+if you see bootstrap in this file then bootstap style is applied.
+
+
