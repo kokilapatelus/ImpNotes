@@ -9,6 +9,10 @@ Add bootstrap file in Angular.json file
               "src/styles.css"
             ],
 
+ "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+
 restrat application by ng serve command. and go to local host port 4200
 localhost:/4200
 
