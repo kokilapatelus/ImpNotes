@@ -1,0 +1,10 @@
+How to share singal node_modules like bootstap shared across all projects.txt
+
+https://www.youtube.com/watch?v=OJW19jlnBbk
+
+Path For New Modules to be shared
+
+D:\Angular\Node Modules Master\demo
+
+Command to share node modules.
+mklink /d node_modules D:\Angular\Node Modules Master\demo
