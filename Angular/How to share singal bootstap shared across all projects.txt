@@ -7,7 +7,7 @@ Path For New Modules to be shared
 D:\Angular\Node Modules Master\demo
 
 Command to share node modules.
-mklink /d node_modules D:\Angular\Node Modules Master\demo
+mklink /d node_modules D:\Angular\Node Modules Master\demo\node_modulues
 
 Open Command Prompt with administrator.  It will show as 
 
