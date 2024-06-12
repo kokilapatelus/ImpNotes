@@ -15,7 +15,8 @@ C:\Window\System32
 
 go to project location folder in cmd window path
 
-D:\Angular\Employee >  Here type the above command.
+D:\Angular\Employee >  Here type the above command. "mklink /d node_modules D:\Angular\node_modulues"
+
 
 
 
