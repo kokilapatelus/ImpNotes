@@ -1,0 +1,3 @@
+String interpolation always transform data to a string so in variable true, false condition it won't work.
+
+Where as when we want to capture data using input text box, we have to always use string interpolation not property binding.
